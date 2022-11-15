@@ -91,8 +91,8 @@ def main(config):
   SERIES_ID = "2252"
   STANDINGS_API_URL = "https://matchplay.events/data/{}/{}/standings".format(config.str("matchType"),config.str("ID"))
   MATCHINFO_URL = "https://matchplay.events/data/{}/{}".format(config.str("matchType"),config.str("ID"))
-  FAILED_PLAYER = [{'position': 0, 'name': "sadface", "points": 0, "custom_count" : 0}]
-  FAILED_HEADER = "something is wrong"
+  FAILED_PLAYER = [{'position': 0, 'name': "sadface", "points_adj": 1, "points": 1, "custom_count" : 1}]
+  FAILED_HEADER = "Bad ID entered"
 
   scores_resp = http.get(STANDINGS_API_URL)
   if scores_resp.status_code != 200:
